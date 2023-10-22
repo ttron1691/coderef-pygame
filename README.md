@@ -69,6 +69,13 @@ We can load and display images via
 game_image = pygame.image.load("path_to_image")
 ```
 
+## Draw components
+### Rectangle
+We can draw a rectangle by using the following commands
+```Python
+pygame.draw.rect(canvas, rect_color, pygame.Rect(x, y, width, height))
+```
+
 ## Event handling
 We check for keyboard events within the game event loop as follows
 ```Python
