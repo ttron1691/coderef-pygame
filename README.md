@@ -32,14 +32,22 @@ canvas.fill(background_color)
 ### Game loop
 The basic loop for the game is given by
 ```Python
-exit = False
-while not exit:
+running = True
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            exit = True
+            running = False
     pygame.display.update()
 ```
-
+We may also exit the game via the following statements
+```Python
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+    pygame.display.update()
+```
 ### Pygame time
 ```Python
 # Creating a clock in pygame
@@ -61,7 +69,20 @@ We can load and display images via
 game_image = pygame.image.load("path_to_image")
 ```
 
+## Event handling
+We check for keyboard events within the game event loop as follows
 ```Python
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                change_to = 'UP'
+            if event.key == pygame.K_DOWN:
+                change_to = 'DOWN'
+            if event.key == pygame.K_LEFT:
+                change_to = 'LEFT'
+            if event.key == pygame.K_RIGHT:
+                change_to = 'RIGHT'
 ```
 
 ```Python
