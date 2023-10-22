@@ -25,7 +25,12 @@ while not exit:
 ```Python
 ```
 
+### Pygame time
 ```Python
+# Creating a clock in pygame
+clock = pygame.time.Clock()
+# Adding time to the clock, e.g. 60fps
+clock.tick(60)
 ```
 
 ```Python
