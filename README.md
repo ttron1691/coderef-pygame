@@ -23,6 +23,9 @@ while not exit:
 ```
 ### Create canvas
 ```Python
+WIDTH = 800
+HEIGHT = 500
+canvas = pygame.display.set_mode((WIDTH, HEIGHT))
 ```
 
 ### Pygame time
